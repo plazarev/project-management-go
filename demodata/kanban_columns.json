@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "label": "To Do",
+    "index": 0
+  },
+  {
+    "id": 2,
+    "label": "In Progress",
+    "index": 1
+  },
+  {
+    "id": 3,
+    "label": "Done",
+    "index": 2
+  },
+  {
+    "id": 4,
+    "label": "Released",
+    "index": 3
+  }
+]
