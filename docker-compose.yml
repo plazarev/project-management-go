@@ -2,6 +2,7 @@ version: "3"
 services: 
   worker:
     build: .
+    image: registry.webix.io/project-managment-go:latest
     ports: 
       - "3000:3000"
     environment:

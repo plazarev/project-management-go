@@ -1,4 +1,4 @@
-FROM golang:1.19 AS builder
+FROM golang:1.19-bullseye AS builder
 WORKDIR /src
 COPY . .
 RUN go mod download

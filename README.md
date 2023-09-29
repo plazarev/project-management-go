@@ -1,4 +1,4 @@
-# Project Managment Deme Backend
+# Project Managment Demo Backend
 
 ## How to start
 
