@@ -9,8 +9,8 @@ type ConfigServer struct {
 }
 
 type AppConfig struct {
-	Server   ConfigServer
-	DB       data.DBConfig
-	Uploads  string
-	Demodata string
+	Server     ConfigServer
+	DB         data.DBConfig
+	Demodata   string
+	Binarydata string
 }

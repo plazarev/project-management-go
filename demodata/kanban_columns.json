@@ -1,12 +1,12 @@
 [
   {
     "id": 1,
-    "label": "To Do",
+    "label": "To do",
     "index": 0
   },
   {
     "id": 2,
-    "label": "In Progress",
+    "label": "In progress",
     "index": 1
   },
   {
@@ -16,7 +16,12 @@
   },
   {
     "id": 4,
-    "label": "Released",
+    "label": "Verified",
     "index": 3
+  },
+  {
+    "id": 5,
+    "label": "Released",
+    "index": 4
   }
 ]

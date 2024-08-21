@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "label": "DHTMLX",
+    "label": "Development Team",
     "scheduler_active": true,
     "scheduler_color": {
       "background": "#006ECC",
@@ -12,7 +12,7 @@
   },
   {
     "id": 2,
-    "label": "SVAR",
+    "label": "Data Team",
     "scheduler_active": true,
     "scheduler_color": {
       "background": "#FF8750",
@@ -20,5 +20,16 @@
     },
     "kanban_row_index": 1,
     "index": 1
+  },
+  {
+    "id": 3,
+    "label": "Marketing and Product Team",
+    "scheduler_active": true,
+    "scheduler_color": {
+      "background": "#FF8750",
+      "border": "#BD4E1B"
+    },
+    "kanban_row_index": 2,
+    "index": 2
   }
 ]

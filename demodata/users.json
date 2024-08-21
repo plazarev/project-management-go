@@ -1,22 +1,27 @@
 [
   {
     "id": 1,
-    "name": "Don Smith",
+    "name": "Steve Smith",
     "avatar": "https://snippet.dhtmlx.com/codebase/data/common/img/02/avatar_61.jpg"
   },
   {
     "id": 2,
-    "name": "Nadia Chasey",
-    "avatar": "https://snippet.dhtmlx.com/codebase/data/common/img/02/avatar_63.jpg"
+    "name": "James White",
+    "avatar": "https://snippet.dhtmlx.com/codebase/data/common/img/02/avatar_04.jpg"
   },
   {
     "id": 3,
-    "name": "Mike Young",
-    "avatar": "https://snippet.dhtmlx.com/codebase/data/common/img/02/avatar_03.jpg"
+    "name": "Angela Allen",
+    "avatar": "https://snippet.dhtmlx.com/codebase/data/common/img/02/avatar_14.jpg"
   },
   {
     "id": 4,
-    "name": "Elvira Webb",
-    "avatar": "https://snippet.dhtmlx.com/codebase/data/common/img/02/avatar_33.jpg"
+    "name": "Angela May",
+    "avatar": "https://snippet.dhtmlx.com/codebase/data/common/img/02/avatar_63.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Edisson Klark",
+    "avatar": "https://snippet.dhtmlx.com/codebase/data/common/img/02/avatar_01.jpg"
   }
 ]

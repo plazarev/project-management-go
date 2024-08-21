@@ -1,5 +1,5 @@
 db:
-  path: db.sqlite
+  path: ./db.sqlite
   debug: true
   reset: true
 server:
@@ -8,3 +8,4 @@ server:
   cors:
     - "*"
 demodata: "./demodata"
+binarydata: "./uploads"

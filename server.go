@@ -103,10 +103,11 @@ func initApp(r *chi.Mux) {
 
 	// init kanban API
 	kanbanPrefix := "/api/kanban"
+	kanbanFileManager := kanbanStore.NewFileManager(Config.Binarydata, Config.Server.URL)
 	kanbanStoreObj := kanbanStore.InitKanbanStore(itemsTreeStore, projectsStore)
 	kanbanServiceObj := kanbanService.NewKanbanService(kanbanStoreObj, treeService)
 	kanbanPublisherApiObj := publisher.NewKanbanPublisher(kanbanStoreObj, r, path.Join(kanbanPrefix, "v1"), []string{"cards", "rows", "columns"})
-	kanbanApiObj := api.NewKanbanAPI(kanbanServiceObj, kanbanPublisherApiObj, publisherApi, kanbanPrefix)
+	kanbanApiObj := api.NewKanbanAPI(kanbanServiceObj, kanbanPublisherApiObj, publisherApi, kanbanPrefix, kanbanFileManager)
 
 	// init gantt API
 	ganttPrefix := "/api/gantt"

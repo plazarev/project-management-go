@@ -19,6 +19,9 @@ type Card struct {
 	Progress    common.FuzzyInt `json:"progress"`
 	Priority    common.FuzzyInt `json:"priority,omitempty"`
 	Users       []int           `json:"users,omitempty"`
+	Attached    *[]data.File    `json:"attached,omitempty"`
+	Comments    *[]data.Comment `json:"comments,omitempty"`
+	Votes       []int           `json:"votes,omitempty"`
 
 	Index int `json:"-"`
 }
@@ -32,9 +35,10 @@ func (c Card) FillItem(item *data.Item) {
 	item.Priority = int(c.Priority)
 	item.Progress = float32(c.Progress) / 100.0
 	item.StartDate = c.StartDate
+	item.Attached = c.Attached
 	item.EndDate = c.EndDate
 	item.Kanban_CardIndex = c.Index
-
+	item.Votes = service.IDsToUsers(c.Votes)
 	item.AssignedUsers = service.IDsToUsers(c.Users)
 }
 
@@ -49,7 +53,9 @@ func (c *Card) PutItem(item data.Item) {
 	c.Progress = common.FuzzyInt(item.Progress * 100)
 	c.StartDate = item.StartDate
 	c.EndDate = item.EndDate
+	c.Attached = item.Attached
+	c.Comments = item.Comments
 	c.Index = item.Kanban_CardIndex
-
+	c.Votes = service.UsersToIDs[int](item.Votes)
 	c.Users = service.UsersToIDs[int](item.AssignedUsers)
 }

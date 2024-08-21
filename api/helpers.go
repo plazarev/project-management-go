@@ -21,6 +21,11 @@ type ResponseTID struct {
 	ID int `json:"tid"`
 }
 
+type ResponseFile struct {
+	ID  int    `json:"id"`
+	URL string `json:"url"`
+}
+
 func respond(w http.ResponseWriter, data any, err error) bool {
 	if err != nil {
 		respondWithError(w, err.Error())

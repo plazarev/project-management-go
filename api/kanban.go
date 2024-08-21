@@ -29,9 +29,10 @@ type ReqColumn struct {
 
 type KanbanAPI struct {
 	BaseAPI
-	service   *kanban.KanbanService
-	pubKanban *publisher.KanbanPublisher
-	pubAll    *publisher.PublisherAPI
+	service     *kanban.KanbanService
+	pubKanban   *publisher.KanbanPublisher
+	pubAll      *publisher.PublisherAPI
+	fileManager *kanbanStore.FileManager
 }
 
 func NewKanbanAPI(
@@ -39,14 +40,16 @@ func NewKanbanAPI(
 	pub *publisher.KanbanPublisher,
 	pubAll *publisher.PublisherAPI,
 	prefix string,
+	fileManager *kanbanStore.FileManager,
 ) *KanbanAPI {
 	return &KanbanAPI{
 		BaseAPI: BaseAPI{
 			prefix: prefix,
 		},
-		service:   service,
-		pubKanban: pub,
-		pubAll:    pubAll,
+		service:     service,
+		pubKanban:   pub,
+		pubAll:      pubAll,
+		fileManager: fileManager,
 	}
 }
 
@@ -86,6 +89,130 @@ func (api *KanbanAPI) SetAPI(r *chi.Mux) {
 				FromWidget: publisher.WidgetKanban,
 			}
 			api.pubAll.PublishAddItem(pubCtx, id)
+		}
+	})
+
+	r.Post(api.route("/cards/{id}/vote"), func(w http.ResponseWriter, r *http.Request) {
+
+		userCtx, err := parseUserContext(r)
+		if err != nil {
+			respondWithError(w, err.Error())
+			return
+		}
+
+		id := parseNumberParam(r, "id")
+
+		err = api.service.Cards.Vote(userCtx, nil, id, true)
+
+		if respond(w, &ResponseID{userCtx.ID}, err) {
+			pubCtx := publisher.PublisherContext{
+				UserID:     userCtx.ID,
+				DeviceID:   userCtx.DeviceID,
+				FromWidget: publisher.WidgetKanban,
+			}
+
+			api.pubAll.PublishUpdateItem(pubCtx, id)
+		}
+	})
+	r.Delete(api.route("/cards/{id}/vote"), func(w http.ResponseWriter, r *http.Request) {
+
+		userCtx, err := parseUserContext(r)
+		if err != nil {
+			respondWithError(w, err.Error())
+			return
+		}
+
+		id := parseNumberParam(r, "id")
+
+		err = api.service.Cards.Vote(userCtx, nil, id, false)
+
+		if respond(w, &ResponseID{userCtx.ID}, err) {
+			pubCtx := publisher.PublisherContext{
+				UserID:     userCtx.ID,
+				DeviceID:   userCtx.DeviceID,
+				FromWidget: publisher.WidgetKanban,
+			}
+			api.pubAll.PublishUpdateItem(pubCtx, id)
+		}
+	})
+	r.Post(api.route("/cards/{id}/comments"), func(w http.ResponseWriter, r *http.Request) {
+
+		userCtx, err := parseUserContext(r)
+		if err != nil {
+			respondWithError(w, err.Error())
+			return
+		}
+
+		id := parseNumberParam(r, "id")
+
+		comment := kanbanStore.CommentInput{}
+		err = parseForm(w, r, &comment)
+		if err != nil {
+			respondWithError(w, err.Error())
+			return
+		}
+		err = api.service.Cards.AddComment(userCtx, nil, id, comment)
+
+		if respond(w, &ResponseID{userCtx.ID}, err) {
+			pubCtx := publisher.PublisherContext{
+				UserID:     userCtx.ID,
+				DeviceID:   userCtx.DeviceID,
+				FromWidget: publisher.WidgetKanban,
+			}
+
+			api.pubAll.PublishUpdateItem(pubCtx, id)
+		}
+	})
+
+	r.Delete(api.route("/cards/{id}/comments/{commentId}"), func(w http.ResponseWriter, r *http.Request) {
+
+		userCtx, err := parseUserContext(r)
+		if err != nil {
+			respondWithError(w, err.Error())
+			return
+		}
+
+		id := parseNumberParam(r, "id")
+		commentId := parseNumberParam(r, "commentId")
+
+		err = api.service.Cards.DeleteComment(userCtx, nil, commentId)
+
+		if respond(w, &ResponseID{userCtx.ID}, err) {
+			pubCtx := publisher.PublisherContext{
+				UserID:     userCtx.ID,
+				DeviceID:   userCtx.DeviceID,
+				FromWidget: publisher.WidgetKanban,
+			}
+			api.pubAll.PublishUpdateItem(pubCtx, id)
+		}
+	})
+
+	r.Put(api.route("/cards/{id}/comments/{commentId}"), func(w http.ResponseWriter, r *http.Request) {
+
+		userCtx, err := parseUserContext(r)
+		if err != nil {
+			respondWithError(w, err.Error())
+			return
+		}
+
+		id := parseNumberParam(r, "id")
+		commentId := parseNumberParam(r, "commentId")
+
+		comment := kanbanStore.CommentInput{}
+		err = parseForm(w, r, &comment)
+		if err != nil {
+			respondWithError(w, err.Error())
+			return
+		}
+		err = api.service.Cards.UpdateComment(userCtx, nil, commentId, comment)
+
+		if respond(w, &ResponseID{userCtx.ID}, err) {
+			pubCtx := publisher.PublisherContext{
+				UserID:     userCtx.ID,
+				DeviceID:   userCtx.DeviceID,
+				FromWidget: publisher.WidgetKanban,
+			}
+			api.pubAll.PublishUpdateItem(pubCtx, id)
 		}
 	})
 
@@ -173,6 +300,39 @@ func (api *KanbanAPI) SetAPI(r *chi.Mux) {
 			}
 			api.pubAll.PublishDeleteItem(pubCtx, id, children)
 		}
+	})
+
+	r.Post(api.route("/uploads"), func(w http.ResponseWriter, r *http.Request) {
+		const maxMemory = 10 << 20 // 10 MB
+
+		err := r.ParseMultipartForm(maxMemory)
+		if err != nil {
+			respondWithError(w, err.Error())
+			return
+		}
+
+		file, handler, err := r.FormFile("upload")
+		if err != nil {
+			respondWithError(w, err.Error())
+			return
+		}
+		defer file.Close()
+
+		fileStore, err := api.fileManager.SaveFile(file, handler.Filename)
+		if err != nil {
+			respondWithError(w, err.Error())
+			return
+		}
+
+		err = api.fileManager.AddFile(nil, fileStore)
+		respond(w, &ResponseFile{fileStore.ID, fileStore.URL}, err)
+	})
+
+	r.Get("/uploads/{id}/{name}", func(w http.ResponseWriter, r *http.Request) {
+		id := parseNumberParam(r, "id")
+
+		err := api.fileManager.FindFile(w, nil, id)
+		respond(w, &ResponseID{id}, err)
 	})
 
 	r.Get(api.route("/rows"), func(w http.ResponseWriter, r *http.Request) {

@@ -23,7 +23,7 @@ func Init(config DBConfig) {
 	if config.Path == "" {
 		panic("undefined path to the database")
 	}
-	
+
 	var err error
 	level := logger.Error
 	if config.Debug {
@@ -48,6 +48,8 @@ func Init(config DBConfig) {
 	must(db.AutoMigrate(&User{}))
 	must(db.AutoMigrate(&Project{}))
 	must(db.AutoMigrate(&ItemUser{}))
+	must(db.AutoMigrate(&File{}))
+	must(db.AutoMigrate(&Comment{}))
 }
 
 func GetDB() *gorm.DB {

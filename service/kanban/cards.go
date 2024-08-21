@@ -78,7 +78,11 @@ func (s *cards) Update(userCtx uCtx.UserContext, dbCtx *data.DBContext, id int, 
 	// }
 
 	err = s.store.Cards.Update(dbCtx, id, &upd)
+	if err != nil {
+		return err
+	}
 
+	err = s.store.Cards.Attachments(dbCtx, id, upd.Attached)
 	return err
 }
 
@@ -197,4 +201,71 @@ func (s *cards) Move(userCtx uCtx.UserContext, dbCtx *data.DBContext, id int, ba
 	}
 
 	return res, err
+}
+
+func (s *cards) Vote(userCtx uCtx.UserContext, dbCtx *data.DBContext, id int, vote bool) (err error) {
+	dbCtx = data.NewTCtx(dbCtx)
+	defer func() { err = dbCtx.End(err) }()
+
+	card := Card{}
+	err = s.store.Cards.GetOne(dbCtx, id, &card)
+	if err != nil {
+		return err
+	}
+	if vote {
+		card.Votes = append(card.Votes, userCtx.ID)
+	} else {
+		var voteUser data.VoteUser
+		err = s.store.Cards.DeleteVote(dbCtx, id, userCtx.ID, voteUser)
+		if err != nil {
+			return err
+		}
+		card.Votes = remove(card.Votes, userCtx.ID)
+	}
+
+	err = s.store.Cards.Update(dbCtx, id, &card)
+	return err
+}
+
+func (s *cards) AddComment(userCtx uCtx.UserContext, dbCtx *data.DBContext, id int, comment kanban.CommentInput) (err error) {
+	dbCtx = data.NewTCtx(dbCtx)
+	defer func() { err = dbCtx.End(err) }()
+	err = s.store.Cards.AddComment(dbCtx, userCtx.ID, id, comment)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (s *cards) DeleteComment(userCtx uCtx.UserContext, dbCtx *data.DBContext, id int) (err error) {
+	dbCtx = data.NewTCtx(dbCtx)
+	defer func() { err = dbCtx.End(err) }()
+
+	err = s.store.Cards.DeleteComment(dbCtx, id)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (s *cards) UpdateComment(userCtx uCtx.UserContext, dbCtx *data.DBContext, id int, comment kanban.CommentInput) (err error) {
+	dbCtx = data.NewTCtx(dbCtx)
+	defer func() { err = dbCtx.End(err) }()
+	err = s.store.Cards.UpdateComment(dbCtx, id, comment)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func remove(slice []int, s int) []int {
+	for i, v := range slice {
+		if v == s {
+			return append(slice[:i], slice[i+1:]...)
+		}
+	}
+	return slice
 }

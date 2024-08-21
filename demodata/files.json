@@ -1,0 +1,66 @@
+[
+    {
+        "id": 1,
+        "isCover": true,
+        "coverURL": "https://snippet.dhtmlx.com/codebase/data/kanban/02/img/1.jpg",
+        "previewURL": "https://snippet.dhtmlx.com/codebase/data/kanban/02/img/1.jpg",
+        "url": "https://snippet.dhtmlx.com/codebase/data/kanban/02/img/1.jpg",
+        "name": "1.jpg"
+      },
+      {
+        "id": 2,
+        "isCover": true,
+        "coverURL": "https://snippet.dhtmlx.com/codebase/data/kanban/02/img/7.jpg",
+        "previewURL": "https://snippet.dhtmlx.com/codebase/data/kanban/02/img/7.jpg",
+        "url": "https://snippet.dhtmlx.com/codebase/data/kanban/02/img/7.jpg",
+        "name": "7.jpg"
+      },
+      {
+        "id": 3,
+        "isCover": true,
+        "coverURL": "https://snippet.dhtmlx.com/codebase/data/kanban/02/img/2.jpg",
+        "previewURL": "https://snippet.dhtmlx.com/codebase/data/kanban/02/img/2.jpg",
+        "url": "https://snippet.dhtmlx.com/codebase/data/kanban/02/img/2.jpg",
+        "name": "2.jpg"
+      },
+      {
+        "id": 4,
+        "isCover": true,
+        "coverURL": "https://snippet.dhtmlx.com/codebase/data/kanban/02/img/6.jpg",
+        "previewURL": "https://snippet.dhtmlx.com/codebase/data/kanban/02/img/6.jpg",
+        "url": "https://snippet.dhtmlx.com/codebase/data/kanban/02/img/6.jpg",
+        "name": "6.jpg"
+      },
+      {
+        "id": 5,
+        "isCover": true,
+        "coverURL": "https://snippet.dhtmlx.com/codebase/data/kanban/02/img/5.jpg",
+        "previewURL": "https://snippet.dhtmlx.com/codebase/data/kanban/02/img/5.jpg",
+        "url": "https://snippet.dhtmlx.com/codebase/data/kanban/02/img/5.jpg",
+        "name": "5.jpg"
+      },
+      {
+        "id": 6,
+        "isCover": true,
+        "coverURL": "https://snippet.dhtmlx.com/codebase/data/kanban/02/img/8.jpg",
+        "previewURL": "https://snippet.dhtmlx.com/codebase/data/kanban/02/img/8.jpg",
+        "url": "https://snippet.dhtmlx.com/codebase/data/kanban/02/img/8.jpg",
+        "name": "8.jpg"
+      },
+      {
+        "id": 7,
+        "isCover": true,
+        "coverURL": "https://snippet.dhtmlx.com/codebase/data/kanban/02/img/3.jpg",
+        "previewURL": "https://snippet.dhtmlx.com/codebase/data/kanban/02/img/3.jpg",
+        "url": "https://snippet.dhtmlx.com/codebase/data/kanban/02/img/3.jpg",
+        "name": "3.jpg"
+      },
+      {
+        "id": 8,
+        "isCover": true,
+        "coverURL": "https://snippet.dhtmlx.com/codebase/data/kanban/02/img/4.jpg",
+        "previewURL": "https://snippet.dhtmlx.com/codebase/data/kanban/02/img/4.jpg",
+        "url": "https://snippet.dhtmlx.com/codebase/data/kanban/02/img/4.jpg",
+        "name": "4.jpg"
+      }
+]

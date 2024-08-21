@@ -1,3 +1,5 @@
+uploads
 db.sqlite
 project-manager-go
 __debug_bin*
+Dockerfile.debug

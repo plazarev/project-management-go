@@ -3,63 +3,320 @@
     "id": 1,
     "project": 1,
     "parent": 0,
-    "status": 1,
-    "duration": 3,
-    "progress": 0.35,
-    "text": "DHTMLX widgets list 1",
-    "description": "some widgets",
-    "color": "#FFC975",
+    "status": 3,
+    "duration": 1,
+    "progress": 0,
+    "text": "Real-time Monitoring",
+    "description": "Create real-time system performance monitoring.",
+    "color": "#33B0B4",
     "checked": false,
     "allday": false,
-    "start_date": "2022-12-15T08:00:00.000Z",
-    "end_date": "2022-12-23T18:00:00.000Z",
     "creation_date": null,
     "edited_date": null,
     "completion_date": null,
-    "assigned_users": [
-      {
-        "id": 2
-      }
-    ],
     "kanban_column_id": 1,
     "kanban_card_index": 0,
-    "gantt_task_type": "project"
+    "gantt_task_type": "project",
+    "votes": [],
+    "assigned_users": [],
+    "comments": [
+      {
+        "text": "Let's sync up on this on Monday.",
+        "date": "2024-10-14T08:23:40.970Z",
+        "id": 1,
+        "cardId": 1,
+        "userId": 1
+      }
+    ]
   },
   {
     "id": 2,
     "project": 1,
-    "parent": 1,
-    "status": 4,
-    "duration": 1,
-    "priority": 3,
-    "progress": 1,
-    "text": "UI Designer 2",
-    "description": "UI Designer widget description",
-    "color": "#FFC975",
+    "parent": 0,
+    "status": 3,
+    "duration": 3,
+    "progress": 0,
+    "text": "Data Backup Mechanism",
+    "description": "Develop data backup and restoration mechanisms.",
+    "color": "#33B0B4",
     "checked": false,
     "allday": false,
-    "start_date": "2022-12-15T03:00:00.000Z",
-    "end_date": "2022-12-29T15:00:00.000Z",
     "creation_date": null,
     "edited_date": null,
     "completion_date": null,
     "kanban_column_id": 1,
-    "kanban_card_index": 1
+    "kanban_card_index": 1,
+    "votes": [],
+    "assigned_users": [],
+    "attached": [
+      {
+        "id": 1,
+        "isCover": true,
+        "coverURL": "https://snippet.dhtmlx.com/codebase/data/kanban/02/img/1.jpg",
+        "previewURL": "https://snippet.dhtmlx.com/codebase/data/kanban/02/img/1.jpg",
+        "url": "https://snippet.dhtmlx.com/codebase/data/kanban/02/img/1.jpg",
+        "name": "1.jpg"
+      }
+    ]
   },
   {
     "id": 3,
-    "project": 1,
-    "parent": 1,
-    "status": 2,
+    "project": 2,
+    "parent": 0,
+    "status": 3,
+    "duration": 4,
+    "progress": 0,
+    "text": "User Data Collection",
+    "description": "Develop data collection mechanism respecting privacy and GDPR.",
+    "color": "#F1B941",
+    "checked": false,
+    "allday": false,
+    "creation_date": null,
+    "edited_date": null,
+    "completion_date": null,
+    "kanban_column_id": 1,
+    "kanban_card_index": 0,
+    "votes": [],
+    "assigned_users": [
+      {
+        "id": 2
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "project": 3,
+    "parent": 0,
+    "status": 3,
+    "duration": 2,
+    "progress": 0,
+    "priority": 1,
+    "text": "Metrics Analysis",
+    "description": "Analyze user metrics and interaction data.",
+    "color": "#0096FA",
+    "checked": false,
+    "allday": false,
+    "creation_date": null,
+    "edited_date": null,
+    "completion_date": null,
+    "kanban_column_id": 1,
+    "kanban_card_index": 0,
+    "votes": [],
+    "assigned_users": [
+      {
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "project": 3,
+    "parent": 0,
+    "status": 3,
     "duration": 1,
-    "progress": 1,
-    "text": "Gantt Pro 3",
-    "description": "Gant pro widget description",
-    "color": "#65D3B3",
+    "progress": 0,
+    "priority": 1,
+    "text": "User Feedback Analysis",
+    "description": "Analyze user feedback for prioritizing improvements.",
+    "color": "#0096FA",
     "checked": true,
     "allday": false,
-    "start_date": "2022-12-20T04:00:00.000Z",
-    "end_date": "2022-12-20T12:00:00.000Z",
+    "creation_date": null,
+    "edited_date": null,
+    "completion_date": null,
+    "kanban_column_id": 1,
+    "kanban_card_index": 1,
+    "votes": [],
+    "assigned_users": [
+      {
+        "id": 4
+      }
+    ],
+    "attached": [
+      {
+        "id": 2,
+        "isCover": true,
+        "coverURL": "https://snippet.dhtmlx.com/codebase/data/kanban/02/img/7.jpg",
+        "previewURL": "https://snippet.dhtmlx.com/codebase/data/kanban/02/img/7.jpg",
+        "url": "https://snippet.dhtmlx.com/codebase/data/kanban/02/img/7.jpg",
+        "name": "7.jpg"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "project": 3,
+    "parent": 0,
+    "status": 3,
+    "duration": 3,
+    "progress": 0,
+    "priority": 1,
+    "text": "International Expansion",
+    "description": "Develop a strategy for international product expansion and regional adaptation.",
+    "color": "#0096FA",
+    "checked": false,
+    "allday": false,
+    "creation_date": null,
+    "edited_date": null,
+    "completion_date": null,
+    "kanban_column_id": 1,
+    "kanban_card_index": 2,
+    "votes": [],
+    "assigned_users": [
+      {
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "project": 1,
+    "parent": 0,
+    "status": 3,
+    "duration": 1,
+    "progress": 1,
+    "priority": 1,
+    "text": "ML Framework Selection for Cat Recognition System",
+    "description": "Research and choose ML libraries/frameworks. Recognizing the breed and color of the cat is the main task of the product ",
+    "color": "#33B0B4",
+    "checked": false,
+    "allday": false,
+    "start_date": "2024-11-29T08:00:00.000Z",
+    "end_date": "2024-12-10T02:00:00.000Z",
+    "creation_date": null,
+    "edited_date": null,
+    "completion_date": null,
+    "kanban_column_id": 5,
+    "kanban_card_index": 0,
+    "votes": [],
+    "assigned_users": [
+      {
+        "id": 2
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "project": 1,
+    "parent": 0,
+    "priority": 2,
+    "status": 3,
+    "duration": 1,
+    "progress": 1,
+    "text": "API Development",
+    "description": "Develop an API for model interaction.",
+    "color": "#33B0B4",
+    "checked": false,
+    "allday": false,
+    "start_date": "2024-10-09T03:00:00.000Z",
+    "end_date": "2024-11-15T15:00:00.000Z",
+    "creation_date": null,
+    "edited_date": null,
+    "completion_date": null,
+    "kanban_column_id": 4,
+    "kanban_card_index": 0,
+    "votes": [],
+    "assigned_users": [
+      {
+        "id": 2
+      },
+      {
+        "id": 1
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "project": 1,
+    "parent": 8,
+    "status": 3,
+    "duration": 1,
+    "progress": 1,
+    "text": "API Integration",
+    "description": "Integrate the ML model into the backend.",
+    "color": "#33B0B4",
+    "checked": false,
+    "allday": false,
+    "creation_date": null,
+    "edited_date": null,
+    "completion_date": null,
+    "start_date": "2024-11-01T03:00:00.000Z",
+    "end_date": "2024-11-25T15:00:00.000Z",
+    "kanban_column_id": 4,
+    "kanban_card_index": 1,
+    "votes": [],
+    "assigned_users": [
+      {
+        "id": 1
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "project": 1,
+    "parent": 0,
+    "status": 3,
+    "duration": 2,
+    "progress": 1,
+    "priority": 2,
+    "text": "CNN Architecture",
+    "description": "Define CNN architecture for cat image classification.",
+    "start_date": "2024-10-03T23:30:00.000Z",
+    "end_date": "2024-10-12T02:00:00.000Z",
+    "color": "#33B0B4",
+    "checked": false,
+    "allday": false,
+    "creation_date": null,
+    "edited_date": null,
+    "completion_date": null,
+    "kanban_column_id": 4,
+    "kanban_card_index": 2,
+    "votes": [],
+    "assigned_users": [
+      {
+        "id": 5
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "project": 1,
+    "parent": 0,
+    "status": 3,
+    "duration": 1,
+    "progress": 1,
+    "text": "Database Schema",
+    "description": "Design a database schema for image and classification data.",
+    "color": "#33B0B4",
+    "checked": false,
+    "allday": false,
+    "start_date": "2024-09-01T23:30:00.000Z",
+    "end_date": "2024-09-15T02:00:00.000Z",
+    "creation_date": null,
+    "edited_date": null,
+    "completion_date": null,
+    "kanban_column_id": 4,
+    "kanban_card_index": 3,
+    "votes": [],
+    "assigned_users": [
+      {
+        "id": 2
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "project": 1,
+    "parent": 0,
+    "status": 3,
+    "duration": 1,
+    "progress": 0.5,
+    "priority": 1,
+    "text": "User Image Upload",
+    "description": "Create user image upload and classification interface.",
+    "color": "#33B0B4",
+    "checked": false,
+    "allday": false,
     "creation_date": null,
     "edited_date": null,
     "completion_date": null,
@@ -67,148 +324,500 @@
     "kanban_card_index": 0,
     "assigned_users": [
       {
+        "id": 2
+      }
+    ],
+    "votes": [{ "id": 1 }],
+    "attached": [
+      {
+        "id": 3,
+        "isCover": true,
+        "coverURL": "https://snippet.dhtmlx.com/codebase/data/kanban/02/img/2.jpg",
+        "previewURL": "https://snippet.dhtmlx.com/codebase/data/kanban/02/img/2.jpg",
+        "url": "https://snippet.dhtmlx.com/codebase/data/kanban/02/img/2.jpg",
+        "name": "2.jpg"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "project": 1,
+    "parent": 0,
+    "status": 3,
+    "duration": 2,
+    "progress": 0.5,
+    "priority": 2,
+    "text": "Hyperparameter Optimization for Enhanced Cat and Dog Recognition",
+    "description": "Fine-tune ML model hyperparameters for improved color and breed recognition in both cats and dogs.",
+    "color": "#33B0B4",
+    "checked": false,
+    "allday": false,
+    "creation_date": null,
+    "edited_date": null,
+    "completion_date": null,
+    "kanban_column_id": 2,
+    "kanban_card_index": 0,
+    "votes": [],
+    "assigned_users": [
+      {
+        "id": 2
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "project": 1,
+    "parent": 0,
+    "status": 3,
+    "duration": 1,
+    "progress": 0.8,
+    "text": "Model Training",
+    "description": "Implement CNN training on cat dataset.",
+    "color": "#33B0B4",
+    "checked": false,
+    "allday": false,
+    "start_date": "2024-12-15T23:30:00.000Z",
+    "end_date": "2024-12-25T02:00:00.000Z",
+    "creation_date": null,
+    "edited_date": null,
+    "completion_date": null,
+    "kanban_column_id": 3,
+    "kanban_card_index": 1,
+    "votes": [],
+    "assigned_users": [
+      {
         "id": 1
-      },
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "project": 2,
+    "parent": 0,
+    "status": 3,
+    "duration": 1,
+    "progress": 1,
+    "text": "Test Data Preparation",
+    "description": "Prepare test cat and non-cat images.",
+    "color": "#FFC975",
+    "checked": false,
+    "allday": false,
+    "creation_date": null,
+    "edited_date": null,
+    "completion_date": null,
+    "kanban_column_id": 5,
+    "kanban_card_index": 0,
+    "votes": [],
+    "assigned_users": [
       {
         "id": 3
       }
     ]
   },
-
   {
-    "id": 4,
-    "project": 1,
-    "parent": 1,
-    "status": 3,
-    "duration": 1,
+    "id": 16,
+    "project": 2,
+    "parent": 18,
     "priority": 1,
-    "progress": 1,
-    "text": "Scheduler 4",
-    "description": "DHX Scheduler widget description",
-    "color": "#FFC975",
-    "checked": false,
-    "allday": false,
-    "start_date": "2022-12-20T08:00:00.000Z",
-    "end_date": "2022-12-20T12:00:00.000Z",
-    "creation_date": null,
-    "edited_date": null,
-    "completion_date": null,
-    "kanban_column_id": 3,
-    "kanban_card_index": 0
-  },
-  {
-    "id": 5,
-    "project": 1,
-    "parent": 1,
-    "status": 4,
-    "duration": 1,
-    "progress": 1,
-    "text": "Event Calendar 5",
-    "description": "Event Calendar widget description",
-    "color": "#FFC975",
-    "checked": false,
-    "allday": false,
-    "start_date": "2022-12-19T03:00:00.000Z",
-    "end_date": "2022-12-22T15:00:00.000Z",
-    "creation_date": null,
-    "edited_date": null,
-    "completion_date": null,
-    "kanban_column_id": 3,
-    "kanban_card_index": 1
-  },
-  {
-    "id": 6,
-    "project": 1,
-    "parent": 1,
-    "status": 1,
-    "duration": 1,
-    "priority": 2,
-    "progress": 1,
-    "text": "Suite 6",
-    "description": "Suite widget description",
-    "color": "#FFC975",
-    "checked": true,
-    "allday": false,
-    "start_date": "2022-12-21T03:00:00.000Z",
-    "end_date": "2022-12-21T15:00:00.000Z",
-    "creation_date": null,
-    "edited_date": null,
-    "completion_date": null,
-    "kanban_column_id": 4,
-    "kanban_card_index": 0
-  },
-  {
-    "id": 7,
-    "project": 1,
-    "parent": 1,
-    "status": 2,
-    "duration": 1,
-    "progress": 1,
-    "text": "Grid 7",
-    "description": "Grid widget description",
-    "color": "#FFC975",
-    "checked": false,
-    "allday": false,
-    "start_date": "2022-12-22T00:12:15.000Z",
-    "end_date": "2022-12-22T06:15:45.000Z",
-    "creation_date": null,
-    "edited_date": null,
-    "completion_date": null,
-    "kanban_column_id": 4,
-    "kanban_card_index": 1
-  },
-  {
-    "id": 8,
-    "project": 1,
-    "parent": 1,
     "status": 3,
     "duration": 1,
     "progress": 1,
-    "text": "Chart 8",
-    "description": "Chart widget description",
+    "text": "Image Preprocessing",
+    "description": "Create an image preprocessing script.",
     "color": "#FFC975",
     "checked": false,
     "allday": false,
-    "start_date": "2022-12-23T23:30:00.000Z",
-    "end_date": "2022-12-24T02:00:00.000Z",
     "creation_date": null,
     "edited_date": null,
     "completion_date": null,
-    "kanban_column_id": 4,
-    "kanban_card_index": 2,
-    "gantt_task_type": "milestone",
+    "kanban_column_id": 5,
+    "kanban_card_index": 0,
+    "votes": [],
     "assigned_users": [
       {
-        "id": 2
-      },
+        "id": 3
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "project": 2,
+    "parent": 0,
+    "status": 3,
+    "duration": 1,
+    "progress": 1,
+    "text": "Dataset Preparation",
+    "description": "Prepare cat and non-cat image dataset.",
+    "color": "#F1B941",
+    "checked": false,
+    "allday": false,
+    "creation_date": null,
+    "edited_date": null,
+    "completion_date": null,
+    "kanban_column_id": 5,
+    "kanban_card_index": 0,
+    "votes": [],
+    "assigned_users": [
       {
         "id": 3
       },
+      {
+        "id": 2
+      }
+    ],
+    "attached": [
+      {
+        "id": 4,
+        "isCover": true,
+        "coverURL": "https://snippet.dhtmlx.com/codebase/data/kanban/02/img/6.jpg",
+        "previewURL": "https://snippet.dhtmlx.com/codebase/data/kanban/02/img/6.jpg",
+        "url": "https://snippet.dhtmlx.com/codebase/data/kanban/02/img/6.jpg",
+        "name": "6.jpg"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "project": 2,
+    "parent": 0,
+    "status": 3,
+    "duration": 1,
+    "progress": 1,
+    "text": "Data Preprocessing",
+    "description": "Preprocess dataset images (resize, standardize, split).",
+    "color": "#F1B941",
+    "checked": false,
+    "allday": false,
+    "creation_date": null,
+    "edited_date": null,
+    "completion_date": null,
+    "kanban_column_id": 4,
+    "kanban_card_index": 0,
+    "votes": [],
+    "assigned_users": [
+      {
+        "id": 3
+      },
+      {
+        "id": 2
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "project": 2,
+    "parent": 0,
+    "status": 3,
+    "duration": 2,
+    "progress": 1,
+    "priority": 1,
+    "text": "Database Optimization",
+    "description": "Optimize database queries for faster data access.",
+    "color": "#F1B941",
+    "checked": false,
+    "allday": false,
+    "creation_date": null,
+    "edited_date": null,
+    "completion_date": null,
+    "kanban_column_id": 3,
+    "kanban_card_index": 0,
+    "votes": [],
+    "assigned_users": [
+      {
+        "id": 3
+      },
+      {
+        "id": 1
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "project": 2,
+    "parent": 0,
+    "status": 3,
+    "duration": 1,
+    "progress": 0.1,
+    "text": "Data Quality Monitoring",
+    "description": "Monitor data quality and update the dataset.",
+    "color": "#F1B941",
+    "checked": false,
+    "allday": false,
+    "creation_date": null,
+    "edited_date": null,
+    "completion_date": null,
+    "kanban_column_id": 2,
+    "kanban_card_index": 0,
+    "votes": [],
+    "assigned_users": [],
+    "attached": [
+      {
+        "id": 5,
+        "isCover": true,
+        "coverURL": "https://snippet.dhtmlx.com/codebase/data/kanban/02/img/5.jpg",
+        "previewURL": "https://snippet.dhtmlx.com/codebase/data/kanban/02/img/5.jpg",
+        "url": "https://snippet.dhtmlx.com/codebase/data/kanban/02/img/5.jpg",
+        "name": "5.jpg"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "project": 3,
+    "parent": 0,
+    "status": 3,
+    "duration": 2,
+    "progress": 1,
+    "text": "Audience Analysis",
+    "description": "Analyze the target audience.",
+    "color": "#0096FA",
+    "checked": false,
+    "allday": false,
+    "start_date": "2024-10-28T08:00:00.000Z",
+    "end_date": "2024-10-28T02:00:00.000Z",
+    "creation_date": null,
+    "edited_date": null,
+    "completion_date": null,
+    "kanban_column_id": 5,
+    "kanban_card_index": 0,
+    "votes": [],
+    "assigned_users": [
       {
         "id": 4
       }
     ]
   },
   {
-    "id": 9,
-    "project": 2,
+    "id": 22,
+    "project": 3,
     "parent": 0,
-    "status": 1,
+    "status": 3,
     "duration": 1,
+    "progress": 1,
     "priority": 1,
-    "progress": 0.75,
-    "text": "Initial SVAR item 9",
-    "description": "i am the first one in SVAR project",
-    "color": "#58C3FE",
+    "text": "Market Research",
+    "description": "Conduct market research and competitor analysis.",
+    "color": "#0096FA",
     "checked": false,
     "allday": false,
-    "start_date": "2022-12-19T04:00:00.000Z",
-    "end_date": "2022-12-19T07:30:00.000Z",
+    "start_date": "2024-10-02T08:00:00.000Z",
+    "end_date": "2024-10-28T02:00:00.000Z",
     "creation_date": null,
     "edited_date": null,
     "completion_date": null,
-    "assigend": [2],
-    "kanban_column_id": 1,
-    "kanban_card_index": 0
+    "kanban_column_id": 5,
+    "kanban_card_index": 0,
+    "gantt_task_type": "milestone",
+    "votes": [],
+    "assigned_users": [
+      {
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "project": 3,
+    "parent": 0,
+    "status": 3,
+    "duration": 1,
+    "progress": 1,
+    "text": "Landing Page Creation",
+    "description": "Create a landing page for the product.",
+    "color": "#0096FA",
+    "checked": false,
+    "allday": false,
+    "creation_date": null,
+    "edited_date": null,
+    "completion_date": null,
+    "kanban_column_id": 4,
+    "kanban_card_index": 0,
+    "votes": [],
+    "assigned_users": [
+      {
+        "id": 4
+      }
+    ],
+    "attached": [
+      {
+        "id": 6,
+        "isCover": true,
+        "coverURL": "https://snippet.dhtmlx.com/codebase/data/kanban/02/img/8.jpg",
+        "previewURL": "https://snippet.dhtmlx.com/codebase/data/kanban/02/img/8.jpg",
+        "url": "https://snippet.dhtmlx.com/codebase/data/kanban/02/img/8.jpg",
+        "name": "8.jpg"
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "project": 3,
+    "parent": 0,
+    "status": 3,
+    "duration": 3,
+    "progress": 1,
+    "text": "Pricing Strategy",
+    "description": "Develop a product pricing strategy.",
+    "color": "#0096FA",
+    "checked": false,
+    "allday": false,
+    "start_date": "2024-11-02T08:00:00.000Z",
+    "end_date": "2024-11-17T02:00:00.000Z",
+    "creation_date": null,
+    "edited_date": null,
+    "completion_date": null,
+    "kanban_column_id": 4,
+    "kanban_card_index": 1,
+    "votes": [],
+    "assigned_users": [
+      {
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "project": 3,
+    "parent": 0,
+    "status": 3,
+    "duration": 1,
+    "progress": 0.3,
+    "text": "Advertising Setup",
+    "description": "Set up advertising campaigns.",
+    "color": "#0096FA",
+    "checked": false,
+    "allday": false,
+    "creation_date": null,
+    "edited_date": null,
+    "completion_date": null,
+    "kanban_column_id": 2,
+    "kanban_card_index": 0,
+    "votes": [],
+    "assigned_users": [
+      {
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "project": 3,
+    "parent": 0,
+    "status": 3,
+    "duration": 1,
+    "progress": 1,
+    "text": "Advertising Channels",
+    "description": "Determine optimal advertising channels.",
+    "color": "#0096FA",
+    "checked": false,
+    "allday": false,
+    "creation_date": null,
+    "edited_date": null,
+    "completion_date": null,
+    "kanban_column_id": 3,
+    "kanban_card_index": 0,
+    "votes": [],
+    "assigned_users": [
+      {
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "project": 1,
+    "parent": 0,
+    "status": 3,
+    "duration": 1,
+    "progress": 0.75,
+    "text": "User Authentication",
+    "description": "Implement user authentication and authorization.",
+    "color": "#33B0B4",
+    "checked": false,
+    "allday": false,
+    "creation_date": null,
+    "edited_date": null,
+    "completion_date": null,
+    "kanban_column_id": 2,
+    "kanban_card_index": 1,
+    "votes": [],
+    "assigned_users": [
+      {
+        "id": 5
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "project": 1,
+    "parent": 0,
+    "status": 3,
+    "duration": 1,
+    "progress": 1,
+    "text": "Model Validation",
+    "description": "Implement model validation on test data.",
+    "color": "#33B0B4",
+    "start_date": "2024-11-15T03:00:00.000Z",
+    "end_date": "2024-11-29T15:00:00.000Z",
+    "checked": false,
+    "allday": false,
+    "creation_date": null,
+    "edited_date": null,
+    "completion_date": null,
+    "kanban_column_id": 5,
+    "kanban_card_index": 1,
+    "assigned_users": [
+      {
+        "id": 2
+      }
+    ],
+    "votes": [{ "id": 2 }],
+    "attached": [
+      {
+        "id": 7,
+        "isCover": true,
+        "coverURL": "https://snippet.dhtmlx.com/codebase/data/kanban/02/img/3.jpg",
+        "previewURL": "https://snippet.dhtmlx.com/codebase/data/kanban/02/img/3.jpg",
+        "url": "https://snippet.dhtmlx.com/codebase/data/kanban/02/img/3.jpg",
+        "name": "3.jpg"
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "project": 1,
+    "parent": 0,
+    "status": 3,
+    "duration": 1,
+    "progress": 1,
+    "priority": 1,
+    "text": "Security Testing",
+    "description": "Perform security checks and vulnerability assessments.",
+    "color": "#33B0B4",
+    "checked": false,
+    "allday": false,
+    "start_date": "2024-11-11T03:00:00.000Z",
+    "end_date": "2024-11-19T15:00:00.000Z",
+    "creation_date": null,
+    "edited_date": null,
+    "completion_date": null,
+    "kanban_column_id": 5,
+    "kanban_card_index": 2,
+    "votes": [],
+    "assigned_users": [
+      {
+        "id": 2
+      }
+    ],
+    "attached": [
+      {
+        "id": 8,
+        "isCover": true,
+        "coverURL": "https://snippet.dhtmlx.com/codebase/data/kanban/02/img/4.jpg",
+        "previewURL": "https://snippet.dhtmlx.com/codebase/data/kanban/02/img/4.jpg",
+        "url": "https://snippet.dhtmlx.com/codebase/data/kanban/02/img/4.jpg",
+        "name": "4.jpg"
+      }
+    ]
   }
 ]

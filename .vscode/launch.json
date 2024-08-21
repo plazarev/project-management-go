@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Attach debugger",
+        "type": "go",
+        "request": "attach",
+        "mode": "remote",
+        "port": 9013,
+        "host": "127.0.0.1",
+        "showLog": true,
+        "preLaunchTask": "dld-remote-debug"
+      }
+    ]
+  }

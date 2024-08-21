@@ -30,6 +30,9 @@ type Item struct {
 	CreationDate   *time.Time `json:"creation_date"`
 	EditedDate     *time.Time `json:"edited_date"`
 	CompletionDate *time.Time `json:"completion_date"`
+	Attached       *[]File    `gorm:"foreignKey:ItemID" json:"attached"`
+	Comments       *[]Comment `gorm:"foreignKey:ItemID" json:"comments"`
+	Votes          []User     `gorm:"many2many:vote_user;" json:"votes"`
 
 	AssignedUsers []User `gorm:"many2many:item_user;" json:"assigned_users"`
 
@@ -60,16 +63,33 @@ type ItemUser struct {
 	UserID int `gorm:"column:user_id;primaryKey"`
 }
 
+type VoteUser struct {
+	ItemID int `gorm:"column:item_id;primaryKey"`
+	UserID int `gorm:"column:user_id;primaryKey"`
+}
+
+func (VoteUser) TableName() string {
+	return "vote_user"
+}
+
 func (ItemUser) TableName() string {
 	return "item_user"
 }
 
 type File struct {
-	ID      string `gorm:"primaryKey" json:"id"`
+	ID      int    `gorm:"primaryKey" json:"id"`
 	Name    string `json:"name"`
 	URL     string `json:"url"`
 	IsCover bool   `json:"isCover"`
+	Path    string `json:"-"`
 
-	Path   string `json:"-"`
-	ItemID int    `json:"-"`
+	ItemID int `json:"-"`
+}
+
+type Comment struct {
+	ID     int    `json:"id"`
+	Text   string `json:"text"`
+	Date   string `json:"date"`
+	UserID int    `json:"userId"`
+	ItemID int    `json:"cardId"`
 }

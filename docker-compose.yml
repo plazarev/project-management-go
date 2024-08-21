@@ -14,6 +14,7 @@ services:
       APP_SERVER_URL: "http://localhost:3000"
       APP_SERVER_CORS: "[\"*\"]"
       APP_DEMODATA: "./demodata"
+      APP_BINARYDATA: "./uploads"
 
     volumes:
       - "./demodata:/app/demodata"

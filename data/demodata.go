@@ -29,6 +29,8 @@ func NewAppDataProvider(folder string) *AppDataProvider {
 func (d AppDataProvider) Up(ctx *DBContext) {
 	must(InitializeDemodata[User](ctx, path.Join(d.folder, "users.json")))
 	must(InitializeDemodata[Project](ctx, path.Join(d.folder, "projects.json")))
+	must(InitializeDemodata[File](ctx, path.Join(d.folder, "files.json")))
+	must(InitializeDemodata[Comment](ctx, path.Join(d.folder, "comments.json")))
 	must(d.items(ctx))
 }
 
@@ -37,6 +39,8 @@ func (d AppDataProvider) Down(ctx *DBContext) {
 	must(ctx.DB.Delete(&ItemUser{}, "1 = 1").Error)
 	must(ctx.DB.Delete(&Project{}, "1 = 1").Error)
 	must(ctx.DB.Delete(&User{}, "1 = 1").Error)
+	must(ctx.DB.Delete(&File{}, "1 = 1").Error)
+	must(ctx.DB.Delete(&Comment{}, "1 = 1").Error)
 }
 
 func (d AppDataProvider) items(ctx *DBContext) error {
